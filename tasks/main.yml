@@ -17,9 +17,7 @@
   shell: >
     {{ composer_path }} update {{ drush_composer_cli_options }}
     chdir={{ drush_install_path }}
-#  when: drush_clone.changed and ansible_distribution == "Debian" and ansible_distribution_release == "wheezy" and drush_composer.stat.exists
-  when: drush_clone.changed and ansible_distribution == "Debian" and drush_composer.stat.exists
-
+  when: drush_clone.changed and ansible_distribution == "Debian" and ansible_distribution_release == "wheezy" and drush_composer.stat.exists
 
 - name: Install Drush dependencies with Composer.
   shell: >
